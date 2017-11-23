@@ -24,8 +24,10 @@ namespace GeopositionService.Repositories
             };
         }
 
-        public GeoPosition GetGeoPositionForVin(long vin)
+        public GeoPosition GetGeoPositionForVin(string vin)
         {
+            // VIN is ignored
+
             var rand = new Random();
             var index = rand.Next(0, _coordinates.Length - 1);
             var coord = _coordinates[index];

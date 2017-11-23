@@ -4,6 +4,6 @@ namespace GeopositionService.Repositories
 {
     public interface IGeoPositionRepository
     {
-         GeoPosition GetGeoPositionForVin(long vin);
+         GeoPosition GetGeoPositionForVin(string vin);
     }
 }

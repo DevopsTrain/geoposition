@@ -4,7 +4,7 @@ namespace GeopositionService.Models
 {
     public class GeoPositionResult
     {
-        private GeoPositionResult(long vin, GeoPosition geoPosition)
+        private GeoPositionResult(string vin, GeoPosition geoPosition)
         {
             Vin = vin;
             TimestampUtc = geoPosition.TimestampUtc;
@@ -12,12 +12,12 @@ namespace GeopositionService.Models
             Longitude = geoPosition.Longitude;
         }
 
-        public static GeoPositionResult Create(long vin, GeoPosition pos)
+        public static GeoPositionResult Create(string vin, GeoPosition pos)
         {
             return new GeoPositionResult(vin, pos);
         }
 
-        public long Vin { get; private set; }
+        public string Vin { get; private set; }
 
         public long TimestampUtc { get; private set; }
 

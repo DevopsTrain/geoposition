@@ -21,9 +21,9 @@ namespace GeopositionService.Controllers
 
         // GET api/values/5
         [HttpGet("{vin}")]
-        public IActionResult Get(long vin)
+        public IActionResult Get(string vin)
         {
-            if (vin <= 0)
+            if (string.IsNullOrWhiteSpace(vin))
                 return BadRequest(String.Format("Invalid VIN provided: {0}", vin));
 
             var currentGeoPositionForVin = _geoRepo.GetGeoPositionForVin(vin);
