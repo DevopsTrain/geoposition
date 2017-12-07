@@ -16,4 +16,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+      <None Update="Dockerfile" CopyToOutputDirectory="PreserveNewest" />
+      <None Update="Dockerrun.aws.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project>
