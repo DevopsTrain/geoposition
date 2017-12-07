@@ -1,3 +1,4 @@
+
 version: 0.2
 
 phases:
@@ -7,4 +8,4 @@ phases:
       - dotnet build
 artifacts:
   files:
-    - bin/Debug/netcoreapp1.0/*
+    - bin/Debug/netcoreapp2.0/*
