@@ -1,13 +1,21 @@
-
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - apt-get update
+      - apt-get install -y zip
   build:
     commands:
       - dotnet restore
       - dotnet build
+      - cd bin/Debug/netcoreapp2.0/
+      - cp $CODEBUILD_SRC_DIR/web.config .
+      - pwd
+      - which zip
+      - zip -r9 $CODEBUILD_SRC_DIR/dotnet-core-app.zip .
 artifacts:
   files:
-    - bin/Debug/netcoreapp2.0/*
-    - Dockerfile
-    - Dockerrun.aws.json
+    - dotnet-core-app.zip
+    - aws-windows-deployment-manifest.json
+discard-paths: yes
