@@ -26,6 +26,9 @@ namespace GeopositionService.Controllers
             if (string.IsNullOrWhiteSpace(vin))
                 return BadRequest(String.Format("Invalid VIN provided: {0}", vin));
 
+            if (vin.Length != 17 && vin.Length != 7)
+                throw new ArgumentOutOfRangeException("vin", vin, "length of provided VIN must be either 7 or 17");
+
             var currentGeoPositionForVin = _geoRepo.GetGeoPositionForVin(vin);
 
             return Ok(GeoPositionResult.Create(vin, currentGeoPositionForVin));
