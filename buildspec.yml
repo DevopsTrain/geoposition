@@ -11,6 +11,8 @@ phases:
       - dotnet build
       - cd bin/Debug/netcoreapp2.0/
       - cp $CODEBUILD_SRC_DIR/web.config .
+      - cp -a $CODEBUILD_SRC_DIR/newrelic .
+      - cp -a $CODEBUILD_SRC_DIR/.ebextensions .
       - pwd
       - which zip
       - zip -r9 $CODEBUILD_SRC_DIR/dotnet-core-app.zip .
