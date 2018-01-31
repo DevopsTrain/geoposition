@@ -2,9 +2,9 @@
 
 Simple REST microservice that returns the geoposition of a vehicle identified by its VIN.
 
-## Usage
+## API Usage
 
-URL: `/api/geoposition/{VIN}`
+GET `/api/geoposition/{VIN}`
 
 The length of the provided VIN must be either 7 or 17, otherwise an exception is thrown by the application.
 
