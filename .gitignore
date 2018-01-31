@@ -1,5 +1,6 @@
 obj/
 bin/
+.vscode/
 *.user
 *.aps
 *.pch
@@ -12,3 +13,4 @@ bin/
 *.cache
 *.ilk
 *.log
+
