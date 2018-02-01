@@ -21,7 +21,10 @@ ENV CORECLR_ENABLE_PROFILING="1" \
     NEW_RELIC_LICENSE_KEY="e5f1d0919ddb0cbf6bd76f208239b91096350ddc" \
     NEW_RELIC_APP_NAME="DevopsTrain-GeopositionService"
 
-RUN apt-get install newrelic-netcore20-agent
+RUN echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' | sudo tee /etc/apt/sources.list.d/newrelic.list
+RUN wget -O- https://download.newrelic.com/548C16BF.gpg | sudo apt-key add -
+RUN sudo apt-get update
+RUN sudo apt-get install newrelic-netcore20-agent
 
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "GeopositionService.dll"]
