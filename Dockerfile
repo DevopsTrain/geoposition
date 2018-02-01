@@ -24,7 +24,7 @@ ENV CORECLR_ENABLE_PROFILING="1" \
 RUN apt-get -y update \
     && apt-get -y install gnupg2 \
     && echo 'deb http://apt.newrelic.com/debian/ newrelic non-free' | tee /etc/apt/sources.list.d/newrelic.list \
-    && wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add - \
+    && curl https://download.newrelic.com/548C16BF.gpg | apt-key add - \
     && apt-get -y update \
     && apt-get -y install newrelic-netcore20-agent
 
