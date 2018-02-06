@@ -19,7 +19,6 @@ namespace GeopositionService.Controllers
             _geoRepo = geoRepo;
         }
 
-        // GET api/values/5
         [HttpGet("{vin}")]
         public IActionResult Get(string vin)
         {
