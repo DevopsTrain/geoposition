@@ -19,7 +19,6 @@ namespace GeopositionService
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://*:8080")
                 .UseStartup<Startup>()
                 .Build();
     }
