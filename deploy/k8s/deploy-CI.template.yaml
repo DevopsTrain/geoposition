@@ -24,11 +24,11 @@ spec:
         imagePullPolicy: Always
         name: geoposition
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         readinessProbe:
           httpGet:
             path: /api/status/readiness
-            port: 80
+            port: 8080
           initialDelaySeconds: 10
           periodSeconds: 5
           timeoutSeconds: 2
@@ -37,7 +37,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /api/status/live
-            port: 80
+            port: 8080
           initialDelaySeconds: 10
           periodSeconds: 5
           timeoutSeconds: 2
@@ -64,7 +64,7 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-    targetPort: 80
+    targetPort: 8080
   selector:
     app: geoposition
 ---

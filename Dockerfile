@@ -13,7 +13,7 @@ RUN dotnet publish -c Release -o out
 FROM microsoft/aspnetcore:2.0
 WORKDIR /app
 
-EXPOSE 80
+EXPOSE 8080
 
 # Environment Variables NewRelic
 ENV CORECLR_ENABLE_PROFILING="1" \
