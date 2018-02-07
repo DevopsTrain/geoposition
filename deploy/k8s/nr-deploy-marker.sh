@@ -6,20 +6,20 @@
 #  $3: Build Number
 #  $4: User name (build queued by)
 
-echo "NR APP ID   : $0 "
-echo "NR API key  : $1 "
-echo "SCM revision: $2 "
-echo "Build Number: $3 "
-echo "User name   : $4 "
+echo "NR APP ID   : $1 "
+echo "NR API key  : $2 "
+echo "SCM revision: $3 "
+echo "Build Number: $4 "
+echo "User name   : $5 "
 
-curl -X POST 'https://api.newrelic.com/v2/applications/$0/deployments.json' \
-     -H 'X-Api-Key:$1' -i \
+curl -X POST 'https://api.newrelic.com/v2/applications/'$1'/deployments.json' \
+     -H 'X-Api-Key:'$2 -i \
      -H 'Content-Type: application/json' \
      -d \
 '{
   "deployment": {
-    "revision": "$2",
-    "description": "$3",
-    "user": "$4"
+    "revision": "$3",
+    "description": "$4",
+    "user": "$5"
   }
 }' 
