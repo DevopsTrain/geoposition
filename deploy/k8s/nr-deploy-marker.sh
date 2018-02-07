@@ -18,8 +18,8 @@ curl -X POST 'https://api.newrelic.com/v2/applications/'$1'/deployments.json' \
      -d \
 '{
   "deployment": {
-    "revision": "$3",
-    "description": "$4",
-    "user": "$5"
+    "revision": "'$3'",
+    "description": "'$4'",
+    "user": "'$5'"
   }
 }' 
