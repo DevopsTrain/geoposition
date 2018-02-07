@@ -1,20 +1,20 @@
 #!/bin/bash
 # Arguments:
-#  $1: NR APP ID
-#  $2: NR API key
-#  $3: SCM revision
-#  $4: Build Number
-#  $5: User name (build queued by)
+#  $0: NR APP ID
+#  $1: NR API key
+#  $2: SCM revision
+#  $3: Build Number
+#  $4: User name (build queued by)
 
-curl -X POST 'https://api.newrelic.com/v2/applications/$1/deployments.json' \
-     -H 'X-Api-Key:$2' -i \
+curl -X POST 'https://api.newrelic.com/v2/applications/$0/deployments.json' \
+     -H 'X-Api-Key:$1' -i \
      -H 'Content-Type: application/json' \
      -d \
 '{
   "deployment": {
-    "revision": "$3",
+    "revision": "$2",
     "changelog": "",
-    "description": "$4",
-    "user": "$5"
+    "description": "$3",
+    "user": "$4"
   }
 }' 
