@@ -75,7 +75,7 @@ metadata:
   namespace: devopstrain
 spec:
   rules:
-  - host: geoposition.devopstrain.spc3i9uigt.stackpoint.io
+  - host: geoposition.devopstrain.spcoj18ldz.stackpoint.io
     http:
       paths:
       - path:
