@@ -41,3 +41,8 @@ steps:
     candidate:
       image: '${{BuildingDockerImage}}'
       registry: cfcr
+  NewRelicDeploymentMarker:
+    image: tutum/curl
+    commands:
+      - | 
+        curl -X POST '${{NR_API_BASEURL}}applications/${{NR_APPID}}/deployments.json' -H 'X-Api-Key:${{NR_API_KEY}}' -i -H 'Content-Type: application/json' -d '{"deployment":{"revision":"${{CF_REVISION}}","description":"Revision: ${{CF_COMMIT_URL}} | Branch: ${{CF_BRANCH}}","user":"${{CF_COMMIT_AUTHOR}}"}}'
